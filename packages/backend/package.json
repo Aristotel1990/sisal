@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -w src --exec babel-node src/index.js",
+    "start": "nodemon -w src --exec babel-node src/index.js",
     "build": "babel src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint \"./**/*.js\" --cache --cache-strategy content --fix",
