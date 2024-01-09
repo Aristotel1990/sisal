@@ -7,7 +7,6 @@ import { PersistGate } from "redux-persist/lib/integration/react";
 import { store, persistor } from "./redux/store";
 import "./index.css";
 import App from "./App";
-import Header from './components/Header';
 import MiniDrawer from './components/Sidebar';
 import MonsterTab from './pages/MonsterTab';
 import MonstersList from "./pages/MonstersList";
@@ -23,7 +22,6 @@ root.render(
   <PersistGate loading={<CircularProgress /> } persistor={persistor}>
     <BrowserRouter>
       <App>
-        {/* <Header/> */}
         <MiniDrawer/>
         <Routes>
           <Route path="/" element={<Navigate to="/create" />} />

@@ -58,7 +58,7 @@ export const {
 
 export async function createMonster(values) {
   console.log("sssssss", values);
-  const response = await axiosInstance.post("/api/monsters", values);
+  await axiosInstance.post("/api/monsters", values);
 }
 export function getSpecies() {
   return async (dispatch) => {
@@ -71,7 +71,7 @@ export function getSpecies() {
   };
 }
 export async function createRandom(values) {
-  const response = await axiosInstance.post("/api/monsters/random", values);
+  await axiosInstance.post("/api/monsters/random", values);
 }
 export function getMonsters(skip, limit) {
   return async (dispatch) => {
@@ -87,5 +87,5 @@ export function getMonsters(skip, limit) {
 }
 
 export async function deleteMonsterById(id) {
-  const response = await axiosInstance.delete(`/api/monsters/${id}`);
+  await axiosInstance.delete(`/api/monsters/${id}`);
 }

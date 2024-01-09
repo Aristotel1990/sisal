@@ -51,7 +51,6 @@ export default function AddMonstersForm() {
     values,
     touched,
     handleSubmit,
-    isSubmitting,
     setFieldValue,
     getFieldProps,
   } = formik;
