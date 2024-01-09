@@ -22,7 +22,7 @@ this allows to generate prisma/client
 ## Run server
 
 ```bash
-npm run dev
+npm run start
 
 this allows to run the server
 
