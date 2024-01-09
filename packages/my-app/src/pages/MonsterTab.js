@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Page from "../utils/Page";
 import CreateMonsters from "../components/CreateMonsters";
 import MonsterList from "../components/MonsterList";
-import { monsterdataData } from "../utils/types";
 import { Tab, Box, Tabs, Stack } from "@mui/material";
 import { getSpecies } from "../redux/slices/data";
 import { useDispatch } from "../redux/store";
