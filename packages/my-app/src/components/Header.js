@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Link style={{ textDecoration: "none" }} to="/welcome">
+        <Link style={{ textDecoration: "none" }} to="/create">
           {" "}
           <Typography
             variant="h8"
@@ -17,10 +17,10 @@ export default function Header() {
               color: "white",
             }}
           >
-            Welcome
+            Create Monsters
           </Typography>
         </Link>
-        <Link style={{ textDecoration: "none" }} to="/home">
+        <Link style={{ textDecoration: "none" }} to="/list">
           {" "}
           <Typography
             variant="h8"
@@ -29,10 +29,10 @@ export default function Header() {
               color: "white",
             }}
           >
-            Route 1
+            Monsters list
           </Typography>
         </Link>
-        <Link style={{ textDecoration: "none" }} to="/items">
+        <Link style={{ textDecoration: "none" }} to="/error">
           {" "}
           <Typography
             variant="h8"
@@ -42,13 +42,7 @@ export default function Header() {
               color: "white",
             }}
           >
-            Route 2{" "}
-          </Typography>
-        </Link>
-        <Link style={{ textDecoration: "none" }} to="/all">
-          {" "}
-          <Typography variant="h8" color="white">
-            Route 3{" "}
+            Display by time{" "}
           </Typography>
         </Link>
       </Toolbar>

@@ -8,7 +8,8 @@
     "build": "babel src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint \"./**/*.js\" --cache --cache-strategy content --fix",
-    "prettier": "npx prettier --write \"**/*.js\""
+    "prettier": "npx prettier --write \"**/*.js\"",
+    "generate": "npx prisma generate"
   },
   "author": "",
   "license": "ISC",

@@ -4,7 +4,7 @@ import CreateMonsters from "../components/CreateMonsters";
 import MonsterList from "../components/MonsterList";
 import { monsterdataData } from "../utils/types";
 import { Tab, Box, Tabs, Stack } from "@mui/material";
-import { getMonsters, getSpecies } from "../redux/slices/data";
+import { getSpecies } from "../redux/slices/data";
 import { useDispatch } from "../redux/store";
 
 export default function MonsterTab() {
@@ -12,7 +12,6 @@ export default function MonsterTab() {
 
   const [currentTab, setCurrentTab] = useState("Add Monster");
   useEffect(() => {
-    // dispatch(getMonsters());
     dispatch(getSpecies());
   }, [dispatch]);
 

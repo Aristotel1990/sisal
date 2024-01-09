@@ -7,15 +7,12 @@ import { PersistGate } from "redux-persist/lib/integration/react";
 import { store, persistor } from "./redux/store";
 import "./index.css";
 import App from "./App";
-import Home from './pages/Home';
-import Welcome from './pages/Welcome';
 import Header from './components/Header';
 import MiniDrawer from './components/Sidebar';
-import AppHeader from './components/AppHeader';
-import Error from "./pages/Error";
 import MonsterTab from './pages/MonsterTab';
 import MonstersList from "./pages/MonstersList";
 import DisplayList from './pages/DisplayList';
+import { CircularProgress } from "@mui/material";
 
 
 const root = ReactDOM.createRoot(
@@ -23,15 +20,16 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <ReduxProvider store={store}>
-  <PersistGate loading={<>Ne pritje</>} persistor={persistor}>
+  <PersistGate loading={<CircularProgress /> } persistor={persistor}>
     <BrowserRouter>
       <App>
+        {/* <Header/> */}
         <MiniDrawer/>
         <Routes>
-          <Route path="/" element={<Navigate to="/welcome" />} />
-          <Route  path="/create" element={<MonsterTab />} />
-          <Route  path="/list" element={<MonstersList  />} />
-          <Route  path="/error" element={<DisplayList />} />
+          <Route path="/" element={<Navigate to="/create" />} />
+          <Route    path="/create" element={<MonsterTab />} />
+          <Route    path="/list" element={<MonstersList  />} />
+          <Route    path="/display" element={<DisplayList />} />
         </Routes>
       </App>
     </BrowserRouter>

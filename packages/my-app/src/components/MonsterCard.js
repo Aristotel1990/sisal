@@ -1,33 +1,14 @@
-import {
-  Card,
-  Button,
-  Typography,
-  Stack,
-  CardMedia,
-  Avatar,
-} from "@mui/material";
-import { MonstersDataType } from "../utils/types";
-import { useSnackbar } from "notistack";
-import {
-  changeRefresh,
-  deleteMonsterById,
-  getMonsters,
-} from "../redux/slices/data";
-import { string } from "yup";
-import { useDispatch, useSelector } from "../redux/store";
+import { Card, Button, Typography, Stack, Avatar } from "@mui/material";
 
-// type MonsterCardProps = {
-//   movie:MonstersDataType
-// };
+import { changeRefresh, deleteMonsterById } from "../redux/slices/data";
+import { useDispatch } from "../redux/store";
 
 const MonsterCard = ({ movie }) => {
-  const { enqueueSnackbar } = useSnackbar();
   const dispatch = useDispatch();
-  const { mosnster } = useSelector((state) => state.data);
 
   const onDeleteMonster = async () => {
     await deleteMonsterById(movie.id);
-    // alert("Monster has been deletet");
+    alert("Monster deleted successfully");
     dispatch(changeRefresh());
   };
   return (

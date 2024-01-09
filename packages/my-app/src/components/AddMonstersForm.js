@@ -1,11 +1,7 @@
 import * as Yup from "yup";
-import { useState } from "react";
 
-// import { useSnackbar } from 'notistack';
-import { useNavigate } from "react-router-dom";
 import { Form, FormikProvider, useFormik } from "formik";
-// material
-// import { LoadingButton, DateTimePicker } from '@mui/lab';
+
 import {
   Box,
   Card,
@@ -13,34 +9,19 @@ import {
   Stack,
   CardHeader,
   TextField,
-  Alert,
   Button,
 } from "@mui/material";
-import { useDispatch, useSelector } from "../redux/store";
+import { useSelector } from "../redux/store";
 import { createMonster } from "../redux/slices/data";
 
-// routes
-//
-
 // ----------------------------------------------------------------------
-const countries = [
-  { id: 1, name: "vlore" },
-  { id: 2, name: "dures" },
-];
+
 export default function AddMonstersForm() {
   const { species } = useSelector((state) => state.data);
   const listSpecies = Object.values(species);
 
   const NewUserSchema = Yup.object().shape({
-    // businessName: Yup.string().required('Ploteso emirin e biznesit '),
-    // nid: Yup.string().required('Plotëso NIPT-in'),
-    // firstName: Yup.string().required('Plotëso emrin'),
-    // address: Yup.string().required('Plotëso adresën'),
-    // lastName: Yup.string().required('Plotëso mbiemrin'),
-    // numberId: Yup.string().required('Plotëso nr e kartës së identitetit'),
-    // city: Yup.string().required('Plotëso qytetin'),
     name: Yup.string().required("Name is required"),
-    // phoneNumber: Yup.mixed().required('Plotëso nr e telefonit')
   });
 
   const formik = useFormik({
@@ -55,7 +36,7 @@ export default function AddMonstersForm() {
     onSubmit: async (values, { setSubmitting, resetForm }) => {
       try {
         await createMonster(values);
-        // alert("Monster is created");
+        alert("Monster is created");
         resetForm();
         setSubmitting(false);
       } catch (error) {

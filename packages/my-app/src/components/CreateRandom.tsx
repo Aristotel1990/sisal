@@ -1,11 +1,8 @@
 import * as Yup from "yup";
 import { useState } from "react";
 
-// import { useSnackbar } from 'notistack';
-import { useNavigate } from "react-router-dom";
 import { Form, FormikProvider, useFormik } from "formik";
 // material
-// import { LoadingButton, DateTimePicker } from '@mui/lab';
 import {
   Box,
   Card,
@@ -13,7 +10,6 @@ import {
   Stack,
   CardHeader,
   TextField,
-  Typography,
   Button,
   CircularProgress,
 } from "@mui/material";
@@ -27,15 +23,6 @@ import { createRandom } from "../redux/slices/data";
 export default function CreateRandom() {
   let [load, setLoad] = useState(false);
   const NewUserSchema = Yup.object().shape({
-    // businessName: Yup.string().required('Ploteso emirin e biznesit '),
-    // nid: Yup.string().required('Plotëso NIPT-in'),
-    // firstName: Yup.string().required('Plotëso emrin'),
-    // address: Yup.string().required('Plotëso adresën'),
-    // lastName: Yup.string().required('Plotëso mbiemrin'),
-    // numberId: Yup.string().required('Plotëso nr e kartës së identitetit'),
-    // city: Yup.string().required('Plotëso qytetin'),
-    // number: Yup.string().required("Specify a number of monsters"),
-    // phoneNumber: Yup.mixed().required('Plotëso nr e telefonit')
   });
 
   const formik = useFormik({
@@ -49,10 +36,8 @@ export default function CreateRandom() {
         setLoad(true);
 
         await createRandom(values);
-        alert("moster has been created");
-
+        alert("Mosters are created successfully");
         resetForm();
-
         setSubmitting(false);
         setLoad(false);
       } catch (error) {
@@ -80,7 +65,7 @@ export default function CreateRandom() {
         <Form noValidate autoComplete="off" onSubmit={handleSubmit}>
           <Grid container margin={2}>
             <Card>
-              <Box marginBottom={3}>
+              <Box >
                 <CardHeader marginB title="Create random monsters" />
               </Box>
               <Stack spacing={3} padding={2}>
@@ -112,6 +97,8 @@ export default function CreateRandom() {
           </Grid>
         </Form>
       </FormikProvider>
+      
+
     </>
   );
 }
