@@ -1,16 +1,8 @@
-import {
-  Box,
-  Stack,
-  Grid,
-  Pagination,
-  TextField,
-  listItemIconClasses,
-} from "@mui/material";
+import { Stack, Grid, Pagination, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
-// import { MovieDataType } from "../../assets/data";
 import MonsterCard from "./MonsterCard";
 import { useDispatch, useSelector } from "../redux/store";
-import { getMonsters, setLimit, setSkip } from "../redux/slices/data";
+import { getMonsters } from "../redux/slices/data";
 
 const MonsterList = () => {
   const dispatch = useDispatch();

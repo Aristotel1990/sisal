@@ -36,10 +36,10 @@ export default function CreateRandom() {
         setLoad(true);
 
         await createRandom(values);
+        setLoad(false);
         alert("Mosters are created successfully");
         resetForm();
         setSubmitting(false);
-        setLoad(false);
       } catch (error) {
         console.error(error);
         setSubmitting(false);
@@ -49,11 +49,8 @@ export default function CreateRandom() {
 
   const {
     errors,
-    values,
     touched,
     handleSubmit,
-    isSubmitting,
-    setFieldValue,
     getFieldProps,
   } = formik;
 

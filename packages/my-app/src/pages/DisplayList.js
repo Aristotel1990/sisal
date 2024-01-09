@@ -1,11 +1,8 @@
-import { Box, Container, Grid, Paper } from "@mui/material";
-import { useEffect, useMemo, useState } from "react";
-// import { MovieDataType } from "../../assets/data";
-import { MonstersDataType } from "../utils/types";
+import { Grid } from "@mui/material";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "../redux/store";
 import MonsterCard from "../components/MonsterCard";
 import Page from "../utils/Page";
-import { Typography } from "@mui/material";
 import { getMonsters } from "../redux/slices/data";
 
 const DisplayList = () => {
@@ -53,7 +50,6 @@ const DisplayList = () => {
   }, [monstersList]);
 
   useEffect(() => {
-    let timeout;
     if (skip === 1) {
       handleMonsters();
     }
