@@ -15,7 +15,8 @@ cd sisal
 npm i
 
 ```
-### `npx lerna run generate  --scope server`
+## Generate prisma/client ###
+ ### `npx lerna run generate  --scope server`
 
 ```bash
 npx lerna run generate  --scope server
@@ -23,7 +24,7 @@ npx lerna run generate  --scope server
 ```
 Run this command to generate prisma/client on the serve
 
-
+## Run simuntately the app and backend ###
 ### `npx lerna run start`
 
 ```bash
