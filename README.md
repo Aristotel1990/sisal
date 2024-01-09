@@ -7,7 +7,11 @@ Project  for Sisal
 In the project directory, you can run:
 ## Install packages
 
+on the sisal project ----> cd sisal
+
 ```bash
+cd sisal
+
 npm i
 
 ```
